@@ -23,6 +23,7 @@
 -(Card *)drawOneCardIntoGame;
 -(NSMutableArray *)drawThreeCardsIntoGame;
 -(void)updateTime;
+- (void)reset;
 
 @property (nonatomic) BOOL isGamePaused;
 @property (nonatomic) BOOL isGameActive;
