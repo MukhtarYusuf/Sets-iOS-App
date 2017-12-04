@@ -21,6 +21,7 @@
 - (void)chooseCardAtIndex:(NSUInteger)index;
 - (Card *)cardAtIndex:(NSUInteger)index;
 -(Card *)drawOneCardIntoGame;
+- (Card *)drawOneCardFromFSetIntoGame;
 -(NSMutableArray *)drawThreeCardsIntoGame;
 -(void)updateTime;
 - (void)reset;
