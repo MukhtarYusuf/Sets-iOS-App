@@ -34,7 +34,7 @@ static const int CTC_RATIO_DENOMINATOR = 100;
 
 static const int START_TOTAL_TIME = 60;
 static const int SUB_TIME = 60;
-static int MATCH_TIME_BONUS = 30;
+static int MATCH_TIME_BONUS = 15;
 
 NSMutableArray *chosenCards;
 
