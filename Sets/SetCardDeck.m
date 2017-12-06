@@ -38,8 +38,8 @@
     NSInteger index = 0;
     
     for(index = startIndex; index < [self cardCount]; index++){
-        [SetCardDeck displaySetCardsInArray:pSetCards];
-        NSLog(@"Checking card: %@", ((SetCard *)self.cards[index]).contents);
+//        [SetCardDeck displaySetCardsInArray:pSetCards];
+//        NSLog(@"Checking card: %@", ((SetCard *)self.cards[index]).contents);
         if([SetCard checkNumbersFor:self.cards[index] with:pSetCards] && [SetCard checkColorsFor:self.cards[index] with:pSetCards] && [SetCard checkShapesFor:self.cards[index] with:pSetCards] && [SetCard checkShadingsFor:self.cards[index] with:pSetCards]){
             NSLog(@"Should return index");
             return index;
