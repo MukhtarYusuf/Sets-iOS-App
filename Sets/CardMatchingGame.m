@@ -37,6 +37,7 @@ static const int SUB_TIME = 60;
 static int MATCH_TIME_BONUS = 15;
 
 NSMutableArray *chosenCards;
+NSMutableArray *fSetCardsAfterMatch;
 
 - (NSMutableArray *)cards{
     if(!_cards) _cards = [[NSMutableArray alloc] init];
@@ -70,6 +71,26 @@ NSMutableArray *chosenCards;
     if(card)
         [self.cards addObject:card];
     return card;
+}
+
+- (Card *)drawOneCardFromFSetIntoGame{
+    Card *card = nil;
+    if(fSetCardsAfterMatch){
+        if([fSetCardsAfterMatch count]){
+            card = (SetCard *)fSetCardsAfterMatch[0];// Use Introspection?
+            [self.cards addObject:card];
+            [fSetCardsAfterMatch removeObjectAtIndex:0];
+        }
+    }
+    return card;
+}
+
+- (void)reset{
+    if(self.isGameActive){
+        [self populateGameWithCount:self.cardCount];
+        [chosenCards removeAllObjects];
+        [[NSNotificationCenter defaultCenter] postNotificationName:RESET_CARDS_NOTIFICATION object:nil];
+    }
 }
 
 -(NSMutableArray *)drawThreeCardsIntoGame{
