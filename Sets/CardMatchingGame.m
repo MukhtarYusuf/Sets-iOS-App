@@ -189,7 +189,7 @@ NSMutableArray *fSetCardsAfterMatch;
     for(Card *otherCard in chosenCards){
         otherCard.matched = YES;
     }
-
+    fSetCardsAfterMatch = [[self drawSetFromDeck] mutableCopy];
     [chosenCards removeAllObjects];
 }
 
