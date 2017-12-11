@@ -224,6 +224,7 @@ NSMutableArray *fSetCardsAfterMatch;
             else
                 self.subTime = self.totalTime;
             [self populateGameWithCount:self.cardCount];
+            [chosenCards removeAllObjects];
             [[NSNotificationCenter defaultCenter] postNotificationName:RESET_CARDS_NOTIFICATION object:nil];
         }
         [[NSNotificationCenter defaultCenter] postNotificationName:UPDATE_TIME_NOTIFICATION object:nil];
