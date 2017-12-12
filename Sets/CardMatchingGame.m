@@ -261,7 +261,7 @@ NSMutableArray *fSetCardsAfterMatch;
         }
         return true;
     }else if([self.permanentDeck isKindOfClass:[SetCardDeck class]]){
-        NSLog(@"Deck is Set Card Deck");
+//        NSLog(@"Deck is Set Card Deck");
         for(int i = 0; i < count - 2; i++){
             Card *randomCard = [self.deck drawRandomCard];
             if(randomCard){
@@ -273,8 +273,8 @@ NSMutableArray *fSetCardsAfterMatch;
         NSArray *fSet = [self drawSetFromDeck];
         if(fSet){
             [self.cards addObjectsFromArray:fSet];
-            NSArray *cardsCopy = [self.cards copy];
             self.cards = [[self.cards shuffledArray] mutableCopy];
+//            [self drawAllCardsLeavingCount:0]; For Testing Drawing From Empty Deck
             return true;
         }else{
             return false;
