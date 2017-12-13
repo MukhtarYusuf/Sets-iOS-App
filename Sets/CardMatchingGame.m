@@ -321,4 +321,10 @@ NSMutableArray *fSetCardsAfterMatch;
     return nil;
 }
 
+- (void)drawAllCardsLeavingCount:(NSUInteger)count{
+    while([self.deck cardCount]){
+        [self.deck drawRandomCard];
+    }
+}
+
 @end
