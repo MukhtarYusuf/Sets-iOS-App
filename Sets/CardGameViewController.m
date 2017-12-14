@@ -57,6 +57,9 @@ BOOL vCAlreadyAppearedOnce;
     else
         [self pauseGame];
 }
+- (IBAction)reset:(id)sender {
+    [self.game reset];
+}
 
 - (IBAction)dealAgain:(UIButton *)sender{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Deal Again?"
@@ -249,7 +252,6 @@ BOOL vCAlreadyAppearedOnce;
     for(UIView *cardView in self.cardViews){
         NSUInteger cardIndex = [self.cardViews indexOfObject:cardView];
         Card *card = [self.game cardAtIndex:cardIndex];
-        NSLog(@"%@", card);
         if([card isKindOfClass:[PlayingCard class]]){
             if([cardView isKindOfClass:[PlayingCardView class]]){
                 PlayingCardView *playingCardView = (PlayingCardView *)cardView;
