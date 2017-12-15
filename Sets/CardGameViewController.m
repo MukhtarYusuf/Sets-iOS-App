@@ -286,22 +286,26 @@ BOOL vCAlreadyAppearedOnce;
                         initialFrame.origin = CGPointMake(initialXValue, 0);
                         initialFrame.size = rectForMatchedCard.size;
                         
-                        SetCard *drawnCard = (SetCard *)[self.game drawOneCardIntoGame];//Use Introspection?
-                        SetCardView *newScv = [[SetCardView alloc] initWithFrame:initialFrame];
-                        newScv.shape = drawnCard.shape;
-                        newScv.color = drawnCard.color;
-                        newScv.number = drawnCard.number;
-                        newScv.shading = drawnCard.shading;
-                        newScv.isChosen = drawnCard.isChosen;
-                        [self.cardContainerView addSubview:newScv];
-                        [addedCards addObject:newScv];
-                        [newScv addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapCard:)]];
-                        
-                        [UIView animateWithDuration:1.0
-                                         animations:^{
-                                             newScv.frame = rectForMatchedCard;
-                                             [self.cardViewFrames addObject:[NSValue valueWithCGRect:newScv.frame]];
-                                         }];
+                        SetCard *drawnCard = (SetCard *)[self.game drawOneCardFromFSetIntoGame];//Use Introspection?
+                        if(!drawnCard)
+                            drawnCard = (SetCard *)[self.game drawOneCardIntoGame];
+                        if(drawnCard){
+                            SetCardView *newScv = [[SetCardView alloc] initWithFrame:initialFrame];
+                            newScv.shape = drawnCard.shape;
+                            newScv.color = drawnCard.color;
+                            newScv.number = drawnCard.number;
+                            newScv.shading = drawnCard.shading;
+                            newScv.isChosen = drawnCard.isChosen;
+                            [self.cardContainerView addSubview:newScv];
+                            [addedCards addObject:newScv];
+                            [newScv addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapCard:)]];
+                            
+                            [UIView animateWithDuration:1.0
+                                             animations:^{
+                                                 newScv.frame = rectForMatchedCard;
+                                                 [self.cardViewFrames addObject:[NSValue valueWithCGRect:newScv.frame]];
+                                             }];
+                        }
                     }
                 }
             }
