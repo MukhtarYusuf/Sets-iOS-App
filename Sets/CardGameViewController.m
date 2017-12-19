@@ -323,8 +323,8 @@ BOOL vCAlreadyAppearedOnce;
 }
 
 -(void)updateTimeLabels{
-    self.totalTimeLabel.text = [NSString stringWithFormat:@"Time Left: %li", (unsigned long)self.game.totalTime];
-    self.subTimeLabel.text = [NSString stringWithFormat:@"Reset Time: %li", (unsigned long)self.game.subTime];
+    self.totalTimeLabel.text = [NSString stringWithFormat:@"Total Time: %li", (unsigned long)self.game.totalTime];
+    self.subTimeLabel.text = [NSString stringWithFormat:@"Reset In: %li", (unsigned long)self.game.subTime];
 }
 
 - (void)updateUIForGameEnded{
