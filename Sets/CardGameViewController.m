@@ -339,7 +339,7 @@ BOOL vCAlreadyAppearedOnce;
     if(self.game.isGamePaused && self.game.isGameActive){
         self.cardContainerView.hidden = YES;
         self.pausedLabel.hidden = NO;
-        [self.pauseButton setImage:[UIImage imageNamed:@"Resume"] forState:UIControlStateNormal];
+        [self.pauseButton setImage:[UIImage imageNamed:@"Resume_Filled"] forState:UIControlStateNormal];
     }else{
         self.cardContainerView.hidden = NO;
         self.pausedLabel.hidden = YES;
