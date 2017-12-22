@@ -343,7 +343,7 @@ BOOL vCAlreadyAppearedOnce;
     }else{
         self.cardContainerView.hidden = NO;
         self.pausedLabel.hidden = YES;
-        [self.pauseButton setImage:[UIImage imageNamed:@"Pause"] forState:UIControlStateNormal];
+        [self.pauseButton setImage:[UIImage imageNamed:@"Pause_Filled"] forState:UIControlStateNormal];
     }
 }
 
