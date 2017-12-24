@@ -486,7 +486,7 @@ BOOL vCAlreadyAppearedOnce;
 }
 
 -(CardMatchingGame *)createGame{
-    return [[CardMatchingGame alloc] initWithCardCount:[self.cardViews count] usingDeck:[self createDeck]];
+    return [[CardMatchingGame alloc] initWithCardCount:(NUMBER_OF_ROWS*NUMBER_OF_COLUMNS) usingDeck:[self createDeck]];
 }
 
 -(void)addWillResignActiveNotification{
