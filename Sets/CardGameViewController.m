@@ -571,6 +571,7 @@ BOOL vCAlreadyAppearedOnce;
     for(UIView *view in self.cardContainerView.subviews){
         [view removeFromSuperview];
     }
+    [self.cardViews removeAllObjects];
 }
 
 //--Core Data Setup Code--
