@@ -891,8 +891,8 @@ BOOL vCAlreadyAppearedOnce;
 #pragma mark - View Controller Lifecycle
 -(void)viewDidLoad{
     [super viewDidLoad];
-    [self setUpBackgroundImage];
-    [self setUpMenuColor];
+//    [self setUpBackgroundImage];
+//    [self setUpMenuColor];
     [self setUpSaveButtonColor];
     //    originalCardContainerBounds = self.cardContainerView.bounds;
     [self hideNavBar];
