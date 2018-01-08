@@ -41,7 +41,7 @@
 //        [SetCardDeck displaySetCardsInArray:pSetCards];
 //        NSLog(@"Checking card: %@", ((SetCard *)self.cards[index]).contents);
         if([SetCard checkNumbersFor:self.cards[index] with:pSetCards] && [SetCard checkColorsFor:self.cards[index] with:pSetCards] && [SetCard checkShapesFor:self.cards[index] with:pSetCards] && [SetCard checkShadingsFor:self.cards[index] with:pSetCards]){
-            NSLog(@"Should return index");
+//            NSLog(@"Should return index");
             return index;
         }
     }
